@@ -1,4 +1,3 @@
-
 insert into locadora.cliente (id, nome, cpf, cnpj, endereco, cnh, data_registro)
 values
 (default, 'Larissa Rocha Vieira', '000.000.000-00', null, ('Paraíba', 'João Pessoa', 'Rua das Palmeiras', 'Tambaú', 127), '000000000', '2024-05-10'::date),
@@ -13,6 +12,11 @@ values
 (default, 'Matheus Araújo Mendes', '000.000.000-09', null, ('Paraíba', 'João Pessoa', 'Rua Fernando Luiz Henrique dos Santos', 'Jardim Oceania', 901), '000000009', '2024-05-10'::date);
 
 
+insert into locadora.fornecedor (id, nome, cnpj, endereco)
+values
+(default, 'LogísticaTotal Ltda.', '44.444.444/0001-44', ('Paraíba', 'João Pessoa', 'Rua Infante Dom Henrique', 'Cabo Branco', 318));
+
+
 insert into locadora.veiculo (id, placa, cor, ano, modelo, marca, tipo, data_registro, descricao, valor_diaria, id_fornecedor)
 values
 (default, 'ABC1234', 'Prata', 2021, 'Corolla', 'Toyota', 'Carro', '2024-02-01'::date, null, 200.50, 1),
@@ -22,11 +26,6 @@ values
 (default, 'PQR1234', 'Preto', 2020, 'CG 160', 'Honda', 'Moto', '2024-02-01'::date, null, 80.30, 1),
 (default, 'STU5678', 'Azul', 2019, 'GSX-S750', 'Suzuki', 'Moto', '2024-02-01'::date, null, 150.00, 1),
 (default, 'VWX9012', 'Vermelho', 2021, 'G 310 R', 'BMW', 'Moto', '2024-02-01'::date, null, 160.00, 1);
-
-
-insert into locadora.fornecedor (id, nome, cnpj, endereco)
-values
-(default, 'LogísticaTotal Ltda.', '44.444.444/0001-44', ('Paraíba', 'João Pessoa', 'Rua Infante Dom Henrique', 'Cabo Branco', 318));
 
 
 insert into locadora.locacao (id, data_locacao, data_entrega, id_cliente, id_veiculo)

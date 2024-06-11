@@ -27,7 +27,7 @@ create table locadora.cliente (
     cpf     varchar(14) unique,
     cnpj    varchar(18) unique,
     endereco    endereco, 
-    cnh     varchar(11) unique,
+    cnh     varchar(11) unique not null,
     data_registro   date
 );
 
@@ -50,9 +50,10 @@ create table locadora.veiculo (
     tipo    varchar(5),
     data_registro   date,
     descricao       text,
-    valor_diaria    real,
+    valor_diaria    float constraint nao_negativo check (valor_diaria >= 0),
     id_fornecedor   integer not null,
-    foreign key(id_fornecedor) references locadora.fornecedor(id)
+    foreign key(id_fornecedor) references locadora.fornecedor(id) on delete cascade
+    
 );
 
 
@@ -62,34 +63,34 @@ create table locadora.locacao (
     data_entrega    date,
     id_cliente  integer not null, 
     id_veiculo  integer not null,
-    foreign key(id_cliente) references locadora.cliente(id),
-    foreign key(id_veiculo) references locadora.veiculo(id)
+    foreign key(id_cliente) references locadora.cliente(id) on delete cascade,
+    foreign key(id_veiculo) references locadora.veiculo(id) on delete cascade
 );
 
 
 create table locadora.telefoneCliente (
     telefone    varchar(20) unique not null,
     id_cliente integer not null,
-    foreign key(id_cliente) references locadora.cliente(id)
+    foreign key(id_cliente) references locadora.cliente(id) on delete cascade
 );
 
 
 create table locadora.emailCliente (
     email   varchar(50) unique not null,
     id_cliente integer not null,
-    foreign key(id_cliente) references locadora.cliente(id)
+    foreign key(id_cliente) references locadora.cliente(id) on delete cascade
 );
 
 
 create table locadora.telefoneFornecedor (
     telefone    varchar(20) unique not null,
     id_fornecedor integer not null,
-    foreign key(id_fornecedor) references locadora.fornecedor(id)
+    foreign key(id_fornecedor) references locadora.fornecedor(id) on delete cascade
 );
 
 
 create table locadora.emailFornecedor (
     email   varchar(50) unique not null,
     id_fornecedor integer not null,
-    foreign key(id_fornecedor) references locadora.fornecedor(id)
+    foreign key(id_fornecedor) references locadora.fornecedor(id) on delete cascade
 );
