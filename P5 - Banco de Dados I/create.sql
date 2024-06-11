@@ -21,18 +21,18 @@ create type endereco as (
 );
 
 
-create table locadora.cliente (
+create table if not exists locadora.cliente (
     id      serial primary key,
     nome    varchar(100) not null,
     cpf     varchar(14) unique,
     cnpj    varchar(18) unique,
     endereco    endereco, 
     cnh     varchar(11) unique not null,
-    data_registro   date
+    data_registro   timestamp not null default current_timestamp
 );
 
 
-create table locadora.fornecedor (
+create table if not exists locadora.fornecedor (
     id      serial primary key,
     nome    varchar(100),
     cnpj    varchar(18) unique not null, 
@@ -40,7 +40,7 @@ create table locadora.fornecedor (
 );
 
 
-create table locadora.veiculo (
+create table if not exists locadora.veiculo (
     id      serial primary key, 
     placa   varchar(7) unique,
     cor     varchar(15),
@@ -48,7 +48,7 @@ create table locadora.veiculo (
     modelo  varchar(25),
     marca   varchar(25),
     tipo    varchar(5),
-    data_registro   date,
+    data_registro   timestamp not null default current_timestamp,
     descricao       text,
     valor_diaria    float constraint nao_negativo check (valor_diaria >= 0),
     id_fornecedor   integer not null,
@@ -57,10 +57,10 @@ create table locadora.veiculo (
 );
 
 
-create table locadora.locacao (
+create table if not exists locadora.locacao (
     id              serial primary key,
-    data_locacao    date,
-    data_entrega    date,
+    data_locacao    timestamp not null,
+    data_entrega    timestamp not null,
     id_cliente  integer not null, 
     id_veiculo  integer not null,
     foreign key(id_cliente) references locadora.cliente(id) on delete cascade,
@@ -68,28 +68,28 @@ create table locadora.locacao (
 );
 
 
-create table locadora.telefoneCliente (
+create table if not exists locadora.telefoneCliente (
     telefone    varchar(20) unique not null,
     id_cliente integer not null,
     foreign key(id_cliente) references locadora.cliente(id) on delete cascade
 );
 
 
-create table locadora.emailCliente (
+create table if not exists locadora.emailCliente (
     email   varchar(50) unique not null,
     id_cliente integer not null,
     foreign key(id_cliente) references locadora.cliente(id) on delete cascade
 );
 
 
-create table locadora.telefoneFornecedor (
+create table if not exists locadora.telefoneFornecedor (
     telefone    varchar(20) unique not null,
     id_fornecedor integer not null,
     foreign key(id_fornecedor) references locadora.fornecedor(id) on delete cascade
 );
 
 
-create table locadora.emailFornecedor (
+create table if not exists locadora.emailFornecedor (
     email   varchar(50) unique not null,
     id_fornecedor integer not null,
     foreign key(id_fornecedor) references locadora.fornecedor(id) on delete cascade
