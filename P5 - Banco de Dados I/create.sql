@@ -22,10 +22,10 @@ create type endereco as (
 
 
 create table if not exists locadora.cliente (
-    id      serial primary key,
+    id      serial primary key, -- uuid para ids complexos
     nome    varchar(100) not null,
     cpf     varchar(14) unique,
-    cnpj    varchar(18) unique,
+    cnpj    varchar(18) unique,-- criar especialização
     endereco    endereco, 
     cnh     varchar(11) unique not null,
     data_registro   timestamp not null default current_timestamp
@@ -33,8 +33,8 @@ create table if not exists locadora.cliente (
 
 
 create table if not exists locadora.fornecedor (
-    id      serial primary key,
-    nome    varchar(100),
+    id      serial primary key,-- nao necessariamente uma empresa
+    nome    varchar(100),-- colocar tudo not null
     cnpj    varchar(18) unique not null, 
     endereco    endereco
 );
@@ -42,18 +42,17 @@ create table if not exists locadora.fornecedor (
 
 create table if not exists locadora.veiculo (
     id      serial primary key, 
-    placa   varchar(7) unique,
+    placa   varchar(7) unique not null,
     cor     varchar(15),
     ano     smallint,
     modelo  varchar(25),
     marca   varchar(25),
     tipo    varchar(5),
     data_registro   timestamp not null default current_timestamp,
-    descricao       text,
-    valor_diaria    float constraint nao_negativo check (valor_diaria >= 0),
+    descricao       text,--clob
+    valor_diaria    real constraint nao_negativo check (valor_diaria >= 0),
     id_fornecedor   integer not null,
     foreign key(id_fornecedor) references locadora.fornecedor(id) on delete cascade
-    
 );
 
 
