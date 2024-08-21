@@ -1,20 +1,5 @@
 ### Banco de Dados II - Trigger para salvar uma tupla deletada
 
-📄 [Sobre o banco](#sobre-o-banco)
-
-📄 [Criação do banco](#criação-do-banco)
-
-📄 [Inserindo dados](#inserindo-dados)
-
-📄 [Trigger](#trigger)
-
-📄 [Testando triggers](#testando-triggers)
-
-
-coloquei a senha pra not null
-padronizei os atributos em inglês
-troquei o tipo text pq esdras ficou falando dele da outra vez, ele sugeriu o tipo blob mas é muito espaço pra um valor como o nome
-
 #### Sobre o banco
 
 Consiste em um sistema de criação de designs (como o Canva), quando um usuário deleta um design o trigger enviará as informações dele para a lixeira, permanecendo lá por 30 dias. Esse banco se baseia em backups das informações, não removendo com integridade os dados de uma vez só.
