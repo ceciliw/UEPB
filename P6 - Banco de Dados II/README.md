@@ -2,7 +2,7 @@
 
 ### Sobre o banco
 
-Consiste em um sistema de criação de designs (como o Canva), quando um usuário deleta um design o trigger enviará as informações dele para a lixeira, permanecendo lá por 30 dias. Esse banco se baseia em backups das informações, não removendo com integridade os dados de uma vez só.
+Consiste em um sistema de criação de designs (como o Canva). Quando um usuário deleta um design, o trigger enviará as informações dele para a lixeira, permanecendo lá por *algum tempo*. Esse banco se baseia em backups das informações, não removendo os dados definitivamente quando solicitado pelo usuário.
 
 ![Diagrama ER](/P6%20-%20Banco%20de%20Dados%20II/bd2.png)
 
