@@ -4,7 +4,7 @@
 
 Consiste em um sistema de criação de designs (como o Canva). Quando um usuário deleta um design, o trigger enviará as informações dele para a lixeira, permanecendo lá por *algum tempo*. Esse banco se baseia em backups das informações, não removendo os dados definitivamente quando solicitado pelo usuário.
 
-![Diagrama ER](/P6%20-%20Banco%20de%20Dados%20II/Trigger/bd2.png)
+![Diagrama ER](/P6%20-%20Banco%20de%20Dados%20II/projeto-trigger/bd2.png)
 
 ### Código completo [montagem.sql](/P6%20-%20Banco%20de%20Dados%20II/Trigger/montagem.sql)
 
