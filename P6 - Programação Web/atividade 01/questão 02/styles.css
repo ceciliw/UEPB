@@ -1,0 +1,27 @@
+body {
+    background-color: #e3e3e3;
+}
+
+header, footer {
+    text-align: center;
+}
+
+.links {
+    display: inline-block;
+    width: 20vw;
+    background-color: #fd92d0ef;
+    color: #071d6db4;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 5px;
+}
+
+.caixas {
+    display: inline-block;
+    width: 45vw;
+    margin: 5vw;
+    background-color: #071d6db4;
+    color: #fd92d0ef;
+    border: 2px solid #fd92d0ef;
+    box-shadow: 4px 4px 4px #071d6db4;
+}

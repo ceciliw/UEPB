@@ -1,0 +1,32 @@
+
+.layout {
+    width: 100%;
+    height: 100%;
+    background-color: #ebc0fe;
+    border: #777777 1px dotted;
+
+    align-items: center;
+    justify-content: space-between;
+    justify-items: center;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 500px);
+    grid-template-rows: 800px;
+}
+
+
+.left, .main, .right {
+    background-color: #5ccedd;
+    border: solid 2px #000000 ;
+    height: 500px;
+    width: 300px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.main {
+    width: 800px;
+}

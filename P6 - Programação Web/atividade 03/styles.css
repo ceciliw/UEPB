@@ -1,0 +1,45 @@
+
+body {
+    background-color: #feffdf;
+    color: #502a0bdc;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+}
+
+input {
+    border-radius: 5px;
+    border: 1px solid #ffa952;
+    padding: 10px 5px;
+}
+
+button {
+    background-color: #ffa952;
+    color: #502a0bdc;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    height: 35px;
+    width: 120px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+button:hover {
+    background-color: #feffdf;
+    border-color: #f89029;
+    color: #f89029;
+}
+
+.card {
+    background-color: #ffe79a;
+    border-radius: 15px;
+    border: 1px solid #ffa952;
+    width: 500px;
+}
+
+.resultado {
+    font-size: 15px;
+}

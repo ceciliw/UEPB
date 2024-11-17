@@ -1,0 +1,25 @@
+
+.paragrafo{
+    display: inline;
+    background-color: #6d9fe4;
+    color: #5e3601;
+    border-radius: 10px;
+    border: solid #5e3601 1px;
+    margin: 10px;
+    padding: 5px;
+}
+
+body {
+    background-color: #e3e3e3;
+}
+
+header, footer {
+    background-color: #4205a3cc;
+    text-align: center;
+    padding: 2px;
+}
+
+main {
+    height: 200px;
+    margin-top: 50px;
+}
